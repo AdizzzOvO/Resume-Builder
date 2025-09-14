@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Builder - Production Ready</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with working navigation -->
+    <header class="header">
+        <div class="container">
+            <h1>Portfolio Builder</h1>
+            <nav class="nav">
+                <button id="tryLiveDemo" class="btn btn--primary">Try Live Demo</button>
+                <button id="compareThemes" class="btn btn--outline">Compare Themes</button>
+                <button id="togglePreview" class="btn btn--outline">Hide Preview</button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content area -->
+    <main class="main">
+        <div class="container">
+            <div class="layout">
+                <!-- Form panel -->
+                <div class="form-panel">
+                    <!-- Theme selection -->
+                    <section class="themes">
+                        <h2>Choose Theme</h2>
+                        <div class="theme-grid">
+                            <button class="theme-btn active" data-theme="professional">
+                                <div class="theme-preview">
+                                    <div class="theme-sample">
+                                        <div class="sample-name">John Smith</div>
+                                        <div class="sample-title">Product Manager</div>
+                                        <div class="sample-section">EXPERIENCE</div>
+                                    </div>
+                                </div>
+                                <span>Professional</span>
+                            </button>
+                            <button class="theme-btn" data-theme="creative">
+                                <div class="theme-preview">
+                                    <div class="theme-sample creative">
+                                        <div class="sample-name">John Smith</div>
+                                        <div class="sample-title">Product Manager</div>
+                                        <div class="sample-section">EXPERIENCE</div>
+                                    </div>
+                                </div>
+                                <span>Creative</span>
+                            </button>
+                            <button class="theme-btn" data-theme="minimal">
+                                <div class="theme-preview">
+                                    <div class="theme-sample minimal">
+                                        <div class="sample-name">John Smith</div>
+                                        <div class="sample-title">Product Manager</div>
+                                        <div class="sample-section">EXPERIENCE</div>
+                                    </div>
+                                </div>
+                                <span>Minimal</span>
+                            </button>
+                            <button class="theme-btn" data-theme="modern">
+                                <div class="theme-preview">
+                                    <div class="theme-sample modern">
+                                        <div class="sample-name">John Smith</div>
+                                        <div class="sample-title">Product Manager</div>
+                                        <div class="sample-section">EXPERIENCE</div>
+                                    </div>
+                                </div>
+                                <span>Modern</span>
+                            </button>
+                        </div>
+                    </section>
+                    
+                    <!-- Color palettes -->
+                    <section class="colors">
+                        <h3>Color Palette</h3>
+                        <div class="color-grid">
+                            <button class="color-btn active" data-palette="blue">
+                                <div class="color-preview">
+                                    <span style="background: #3b82f6"></span>
+                                    <span style="background: #1e40af"></span>
+                                </div>
+                                Blue
+                            </button>
+                            <button class="color-btn" data-palette="green">
+                                <div class="color-preview">
+                                    <span style="background: #10b981"></span>
+                                    <span style="background: #059669"></span>
+                                </div>
+                                Green
+                            </button>
+                            <button class="color-btn" data-palette="purple">
+                                <div class="color-preview">
+                                    <span style="background: #8b5cf6"></span>
+                                    <span style="background: #7c3aed"></span>
+                                </div>
+                                Purple
+                            </button>
+                            <button class="color-btn" data-palette="red">
+                                <div class="color-preview">
+                                    <span style="background: #ef4444"></span>
+                                    <span style="background: #dc2626"></span>
+                                </div>
+                                Red
+                            </button>
+                        </div>
+                    </section>
+                    
+                    <!-- Form fields -->
+                    <form id="portfolioForm" class="form">
+                        <!-- Personal info -->
+                        <fieldset class="form-section">
+                            <legend>Personal Information</legend>
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <input type="text" id="fullName" class="form-control" placeholder="Full Name" required>
+                                <div class="field-feedback"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="title" class="form-label">Job Title *</label>
+                                <input type="text" id="title" class="form-control" placeholder="e.g., Senior Product Manager" required>
+                                <div class="field-feedback"></div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Email" required>
+                                    <div class="field-feedback"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" id="phone" class="form-control" placeholder="Phone">
+                                    <div class="field-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="location" class="form-label">Location</label>
+                                    <input type="text" id="location" class="form-control" placeholder="City, State">
+                                    <div class="field-feedback"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="website" class="form-label">Website</label>
+                                    <input type="url" id="website" class="form-control" placeholder="https://yourwebsite.com">
+                                    <div class="field-feedback"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="summary" class="form-label">Professional Summary *</label>
+                                <textarea id="summary" class="form-control" required rows="4" placeholder="Write a compelling summary of your professional background and key achievements..."></textarea>
+                                <div class="char-counter">
+                                    <span id="summaryCounter">0/500</span>
+                                </div>
+                                <div class="field-feedback"></div>
+                            </div>
+                        </fieldset>
+                        
+                        <!-- Experience section -->
+                        <fieldset class="form-section">
+                            <legend>Work Experience</legend>
+                            <div id="experienceList" class="dynamic-list">
+                                <!-- Dynamic experience items will be added here -->
+                            </div>
+                            <button type="button" id="addExperience" class="btn btn--outline add-btn">Add Experience</button>
+                        </fieldset>
+                        
+                        <!-- Education section -->
+                        <fieldset class="form-section">
+                            <legend>Education</legend>
+                            <div id="educationList" class="dynamic-list">
+                                <!-- Dynamic education items will be added here -->
+                            </div>
+                            <button type="button" id="addEducation" class="btn btn--outline add-btn">Add Education</button>
+                        </fieldset>
+                        
+                        <!-- Skills section -->
+                        <fieldset class="form-section">
+                            <legend>Skills</legend>
+                            <div class="form-group">
+                                <label for="technicalSkills" class="form-label">Technical Skills</label>
+                                <input type="text" id="technicalSkills" class="form-control" placeholder="JavaScript, Python, React, etc. (separate with commas)">
+                                <small class="form-hint">Separate skills with commas</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="softSkills" class="form-label">Soft Skills</label>
+                                <input type="text" id="softSkills" class="form-control" placeholder="Leadership, Communication, Problem-solving, etc.">
+                            </div>
+                        </fieldset>
+                        
+                        <!-- Projects section -->
+                        <fieldset class="form-section">
+                            <legend>Projects</legend>
+                            <div id="projectsList" class="dynamic-list">
+                                <!-- Dynamic project items will be added here -->
+                            </div>
+                            <button type="button" id="addProject" class="btn btn--outline add-btn">Add Project</button>
+                        </fieldset>
+                    </form>
+                    
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn--outline" id="clearAll">Clear All</button>
+                        <button type="button" class="btn btn--primary btn--lg" id="generatePDF">Generate PDF Resume</button>
+                    </div>
+                </div>
+                
+                <!-- Live Preview Panel -->
+                <section id="previewPanel" class="preview-panel">
+                    <div class="preview-header">
+                        <h2>Live Preview</h2>
+                        <div class="preview-controls">
+                            <button class="btn btn--sm btn--outline" id="zoomOut" aria-label="Zoom out">-</button>
+                            <span id="zoomLevel" class="zoom-indicator">100%</span>
+                            <button class="btn btn--sm btn--outline" id="zoomIn" aria-label="Zoom in">+</button>
+                        </div>
+                    </div>
+                    <div class="preview-container">
+                        <div id="previewContent" class="preview-content">
+                            <div class="preview-placeholder">
+                                <div class="placeholder-icon">📄</div>
+                                <h3>Your Portfolio Preview</h3>
+                                <p>Click "Try Live Demo" to see how your resume will look, or start filling out your information above.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Success Notification -->
+    <div id="notification" class="notification hidden">
+        <span class="notification-icon"></span>
+        <span class="notification-message"></span>
+        <button class="notification-close" aria-label="Close notification">&times;</button>
+    </div>
+    
+    <!-- PDF Generation Modal -->
+    <div id="pdfModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <h3>Generating Your PDF Resume</h3>
+            <div class="progress-bar">
+                <div id="pdfProgress" class="progress-fill"></div>
+            </div>
+            <p id="pdfStatus">Preparing your professional resume...</p>
+        </div>
+    </div>
+    
+    <!-- Theme Comparison Modal -->
+    <div id="compareModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3>Theme Comparison</h3>
+                <button class="btn btn--outline" id="closeCompare">&times;</button>
+            </div>
+            <div class="comparison-grid" id="comparisonGrid">
+                <!-- Comparison content will be populated here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- PDF Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
